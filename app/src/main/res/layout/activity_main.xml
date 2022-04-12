@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#fff"
+    tools:context=".MainActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/logo_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:civ_border_color="@color/splash_color"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the book club"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/logo_icon"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/shape_button"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/skip_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue without login"
+        android:textAllCaps="false"
+        android:textColor="@color/splash_color"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_button_transparent" />
+
+
+
+
+</RelativeLayout>
