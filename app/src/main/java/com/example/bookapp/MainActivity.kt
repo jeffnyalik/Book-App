@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.skipBtn.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, UserDashboardActivity::class.java))
         }
     }
 }

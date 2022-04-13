@@ -11,6 +11,7 @@
         android:theme="@style/Theme.BookApp">
         <activity
             android:name=".UserDashboardActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".AdminDashboardActivity"
