@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Patterns
 import android.widget.Toast
 import com.example.bookapp.databinding.ActivityLoginBinding
@@ -17,8 +18,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var progressDialog: ProgressDialog
-    private val email = ""
-    private val password  = ""
+    private var email = ""
+    private var password  = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,19 +46,20 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun validateData() {
-        loginUser()
-//        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-//            binding.emailEt.error = "Invalid email format"
-//        }
-//        if (email.isEmpty()){
-//            binding.emailEt.error = "email can not be empty"
-//        }
-//        else if(password.isEmpty()){
-//            binding.passwordEt.error = "Password is required"
-//        }
-//        else{
-//            loginUser()
-//        }
+        email = binding.emailEt.text.toString().trim()
+        password = binding.passwordEt.text.toString().trim()
+
+        if(email.isEmpty() && password.isEmpty()){
+            Toast.makeText(this, "All fields are required", Toast.LENGTH_LONG).show()
+        }
+
+        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            binding.emailEt.error = "Invalid email format"
+        }
+        else
+        {
+            loginUser()
+        }
     }
 
     private fun loginUser() {
@@ -70,6 +72,7 @@ class LoginActivity : AppCompatActivity() {
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Failed due to ${e}", Toast.LENGTH_LONG).show()
+                progressDialog.dismiss()
             }
     }
 

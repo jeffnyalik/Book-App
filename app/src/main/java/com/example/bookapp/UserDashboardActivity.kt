@@ -15,8 +15,23 @@ class UserDashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        //Initialize firebase
+        firebaseAuth = FirebaseAuth.getInstance()
+        checkUser()
+
         binding.logOut.setOnClickListener {
-            checkUser()
+            firebaseAuth.signOut()
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
+        binding.addCat.setOnClickListener {
+            startActivity(Intent(this, AddCategoryActivity::class.java))
+            finish()
+        }
+
+        binding.addPdf.setOnClickListener{
+            //code here
         }
     }
 

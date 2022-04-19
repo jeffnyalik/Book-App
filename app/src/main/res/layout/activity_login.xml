@@ -65,7 +65,7 @@
                     android:drawableStart="@drawable/ic_baseline_email_24"
                     android:hint="email"
                     android:drawablePadding="10dp"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     android:padding="10dp"
                     android:textColor="@color/black"
                     android:textColorHint="#cccc"
