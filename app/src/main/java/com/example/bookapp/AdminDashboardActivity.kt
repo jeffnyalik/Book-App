@@ -20,7 +20,17 @@ class AdminDashboardActivity : AppCompatActivity() {
 
         binding.logOut.setOnClickListener {
             firebaseAuth.signOut()
-            checkUser()
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
+        binding.addCat.setOnClickListener {
+            startActivity(Intent(this, AddCategoryActivity::class.java))
+            finish()
+        }
+
+        binding.addPdf.setOnClickListener{
+            //code here
         }
     }
 

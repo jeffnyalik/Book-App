@@ -25,14 +25,7 @@ class UserDashboardActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.addCat.setOnClickListener {
-            startActivity(Intent(this, AddCategoryActivity::class.java))
-            finish()
-        }
 
-        binding.addPdf.setOnClickListener{
-            //code here
-        }
     }
 
     private fun checkUser() {
