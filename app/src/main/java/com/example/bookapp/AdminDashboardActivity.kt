@@ -5,10 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.bookapp.databinding.ActivityAdminDashboardBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class AdminDashboardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAdminDashboardBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var categoryArrayList: ArrayList<ModelCategory>
+    private lateinit var adapterCategory:CategoryAdapter;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityAdminDashboardBinding.inflate(layoutInflater)
@@ -17,6 +23,7 @@ class AdminDashboardActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
+        loadCategories()
 
         binding.logOut.setOnClickListener {
             firebaseAuth.signOut()
@@ -30,7 +37,7 @@ class AdminDashboardActivity : AppCompatActivity() {
         }
 
         binding.addPdf.setOnClickListener{
-            //code here
+            startActivity(Intent(this, PdfAddActivity::class.java))
         }
     }
 
@@ -43,5 +50,31 @@ class AdminDashboardActivity : AppCompatActivity() {
             val email = firebaseUser.email
             binding.emailTitle.text = email
         }
+    }
+
+    private fun loadCategories(){
+        categoryArrayList = ArrayList()
+        val ref = FirebaseDatabase.getInstance().getReference("Categories")
+        ref.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                categoryArrayList.clear()
+                for (ds in snapshot.children){
+                    val model = ds.getValue(ModelCategory::class.java)
+                    categoryArrayList.add(model!!)
+                }
+                //setup adapters
+                adapterCategory = CategoryAdapter(this@AdminDashboardActivity,
+                    categoryArrayList
+                )
+
+                //set adpater to the recyler view
+                binding.categoriesRev.adapter = adapterCategory
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 }

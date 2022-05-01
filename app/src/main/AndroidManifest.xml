@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookApp">
         <activity
-            android:name=".AddCategoryActivity"
+            android:name=".PdfAddActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="false" />
+        <activity
+            android:name=".AddCategoryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".UserDashboardActivity"
             android:exported="false"

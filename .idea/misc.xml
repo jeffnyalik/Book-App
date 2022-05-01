@@ -3,22 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/del_shape_btn.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/ic_back_white.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1195" />
+        <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/ic_baseline_attach_file_24.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1195" />
+        <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/ic_delete.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/shape_button.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/shape_button_transparent.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/shape_edittext01.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/shape_toolbar01.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/drawable/shape_toolbar02.xml" value="0.1195" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/activity_add_category.xml" value="0.20416666666666666" />
-        <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.22" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/activity_pdf_add.xml" value="0.20416666666666666" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/activity_user_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/mobileapps/BookApp/app/src/main/res/layout/row_category.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
